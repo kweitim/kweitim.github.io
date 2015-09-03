@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-09-02T12:59:22.363Z</updated>
+  <updated>2015-09-03T02:19:35.618Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -13,6 +13,21 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[GT blog]]></title>
+    <link href="http://yoursite.com/2015/09/03/testBlog/"/>
+    <id>http://yoursite.com/2015/09/03/testBlog/</id>
+    <published>2015-09-03T02:10:52.000Z</published>
+    <updated>2015-09-03T02:19:35.618Z</updated>
+    <content type="html"><![CDATA[<h2 id="首页">首页</h2><h3 id="程序亦非猿">程序亦非猿</h3>]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="首页">首页</h2><h3 id="程序亦非猿">程序亦非猿</h3>]]>
+    </summary>
+    
+      <category term="blog test" scheme="http://yoursite.com/tags/blog-test/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Hello World]]></title>
