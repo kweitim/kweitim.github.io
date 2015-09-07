@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-09-07T12:19:52.171Z</updated>
+  <updated>2015-09-07T12:46:53.837Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,11 +15,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[linux命学习]]></title>
+    <title><![CDATA[linux命令学习]]></title>
     <link href="http://yoursite.com/2015/09/03/linux%E5%91%BD%E5%AD%A6%E4%B9%A0/"/>
     <id>http://yoursite.com/2015/09/03/linux命学习/</id>
     <published>2015-09-03T06:56:44.000Z</published>
-    <updated>2015-09-07T12:19:52.171Z</updated>
+    <updated>2015-09-07T12:46:53.837Z</updated>
     <content type="html"><![CDATA[<h3 id="1_查找pid">1 查找pid</h3><ul>
 <li><code>ps aux | grep sshd</code><blockquote>
 <ul>
