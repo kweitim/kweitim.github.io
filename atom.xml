@@ -1,81 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title><![CDATA[Kwei]]></title>
+  <title><![CDATA[Hexo]]></title>
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-09-03T07:46:51.092Z</updated>
+  <updated>2015-09-03T02:19:35.618Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
-    <name><![CDATA[KweiTim]]></name>
+    <name><![CDATA[John Doe]]></name>
     
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[linux命学习]]></title>
-    <link href="http://yoursite.com/2015/09/03/linux%E5%91%BD%E5%AD%A6%E4%B9%A0/"/>
-    <id>http://yoursite.com/2015/09/03/linux命学习/</id>
-    <published>2015-09-03T06:56:44.000Z</published>
-    <updated>2015-09-03T07:46:51.092Z</updated>
-    <content type="html"><![CDATA[<h3 id="1_查找pid">1 查找pid</h3><ul>
-<li><code>ps aux | grep sshd</code><blockquote>
-<ul>
-<li><code>ps aux</code> 显示系统所以进程</li>
-<li>| 管道重定向，<strong>将管道命令之前的输出，重定向到管道命令后的命令中，作为该命令的输入</strong>。<br><code>grep sshd</code>过滤剩下与sshd相关的进程 </li>
-</ul>
-</blockquote>
-</li>
-</ul>
-<h3 id="2_services命令">2 services命令</h3><p><strong>命令:</strong><code>service name command：service httpd reload</code></p>
-<blockquote>
-<ul>
-<li>使用command方式控制名字为name的服务，上面是将http重新reload</li>
-<li><code>service --status-all</code>，列出所有系统服务的当前状态</li>
-<li>command 命令如下表：<br>| 命令        | 命令描述   |<br>| ——–   | —–:  |<br>| start     | 启动指定的服务 |<br>| stop        |   通过感觉的方式停止指定服务   |<br>| restart        |    重新启动指定的服务    |<br>| reload    | 重新装载指定服务的配置文件 |<br>| status   | 显示指定服务的状态｜</li>
-<li><code>service --status-all</code>，列出所有</li>
-</ul>
-</blockquote>
-<h3 id="3_杀死进程">3 杀死进程</h3><ul>
-<li><code>kill pid</code>，杀死指定进程</li>
-<li><code>kill -9 pid</code>，强制杀死指定进程，信心可以突然报表</li>
-<li><code>killall process name</code>，如：<code>killall httpd</code>，表示结束某个名字的所有进程，<strong>同样名字可以有多个进程</strong></li>
-</ul>
-<h3 id="4_ubuntu_mysql_utf8编码的设置：">4 ubuntu mysql utf8编码的设置：</h3><pre><code>到<span class="regexp">/etc/my</span>.cnf或者是<span class="regexp">/etc/my</span>sql<span class="regexp">/my.cnf里面修改client，mysqld,mysql字段，**网上很多人的路径是/</span>etc<span class="regexp">/my.cnf,我的是在/</span>etc<span class="regexp">/mysql/my</span>.cnf**，怎么修改百度去
-</code></pre><p>###5 service mysql start失败：<br><code>glinux@ubuntu:~$ sudo service mysql start</code><br><code>start: Job failed to start</code></p>
-<pre><code>问题出现的原因：我将<span class="escape">`/</span>etc/mysql/my.cnf<span class="escape">`里</span>面的[mysql]设置为<span class="escape">`d</span>efault-character-set=utf8<span class="escape">`了</span>，网络资料说：如果mysql版本<span class="number">5.5</span>后设置mysqld字段设置如下：
-</code></pre><blockquote>
-<p><code>character-set-server=utf8</code></p>
-</blockquote>
-]]></content>
+    <title><![CDATA[GT blog]]></title>
+    <link href="http://yoursite.com/2015/09/03/testBlog/"/>
+    <id>http://yoursite.com/2015/09/03/testBlog/</id>
+    <published>2015-09-03T02:10:52.000Z</published>
+    <updated>2015-09-03T02:19:35.618Z</updated>
+    <content type="html"><![CDATA[<h2 id="首页">首页</h2><h3 id="程序亦非猿">程序亦非猿</h3>]]></content>
     <summary type="html">
-    <![CDATA[<h3 id="1_查找pid">1 查找pid</h3><ul>
-<li><code>ps aux | grep sshd</code><blockquote>
-<ul>
-<li><code>ps aux</code> 显示系统所以进程</li>
-<li>| 管道重定向，<st]]>
+    <![CDATA[<h2 id="首页">首页</h2><h3 id="程序亦非猿">程序亦非猿</h3>]]>
     </summary>
     
-      <category term="技术" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF/"/>
+      <category term="blog test" scheme="http://yoursite.com/tags/blog-test/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[记录生活]]></title>
-    <link href="http://yoursite.com/2015/09/03/testBlog/"/>
-    <id>http://yoursite.com/2015/09/03/testBlog/</id>
-    <published>2015-09-03T02:10:52.000Z</published>
-    <updated>2015-09-03T07:35:23.389Z</updated>
-    <content type="html"><![CDATA[<h2 id="首页">首页</h2><p><img src="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg" alt=""><br>    记录是生活的开始</p>
-<h2 id="程序亦非猿">程序亦非猿</h2>]]></content>
+    <title><![CDATA[Hello World]]></title>
+    <link href="http://yoursite.com/2015/09/02/hello-world/"/>
+    <id>http://yoursite.com/2015/09/02/hello-world/</id>
+    <published>2015-09-02T12:59:22.363Z</published>
+    <updated>2015-09-02T12:59:22.363Z</updated>
+    <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
     <summary type="html">
-    <![CDATA[<h2 id="首页">首页</h2><p><img src="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg" alt=""><br>    记录是生活的开始</p>
-<h2 id="程序亦非猿">程序亦非猿]]>
+    <![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io]]>
     </summary>
-    
-      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
