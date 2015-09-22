@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-09-22T08:37:45.876Z</updated>
+  <updated>2015-09-22T08:58:00.710Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://yoursite.com/2015/09/22/C-%E7%A7%AF%E7%B4%AF/"/>
     <id>http://yoursite.com/2015/09/22/C-积累/</id>
     <published>2015-09-22T07:14:02.000Z</published>
-    <updated>2015-09-22T08:37:45.876Z</updated>
+    <updated>2015-09-22T08:58:00.710Z</updated>
     <content type="html"><![CDATA[<h2 id="1、类const_int，const_static_int，static_int，int数据成员：">1、类const int，const static int，static int，int数据成员：</h2><p><strong>const int</strong> </p>
 <blockquote>
 <p>数据成员变量不可以在类外定义，需要使用构造函数直接初始化而非赋值初始化，即只可以在类外部定义初始化<br>例如直接初始化：<code>aClass(int num)：initConstInt(num)</code></p>
@@ -94,7 +94,7 @@
     <link href="http://yoursite.com/2015/09/03/linux%E5%91%BD%E5%AD%A6%E4%B9%A0/"/>
     <id>http://yoursite.com/2015/09/03/linux命学习/</id>
     <published>2015-09-03T06:56:44.000Z</published>
-    <updated>2015-09-07T12:46:53.837Z</updated>
+    <updated>2015-09-22T09:07:14.136Z</updated>
     <content type="html"><![CDATA[<h3 id="1_查找pid">1 查找pid</h3><ul>
 <li><code>ps aux | grep sshd</code><blockquote>
 <ul>
@@ -105,11 +105,43 @@
 </li>
 </ul>
 <h3 id="2_services命令">2 services命令</h3><p><strong>命令:</strong><code>service name command：service httpd reload</code></p>
-<blockquote>
 <ul>
 <li>使用command方式控制名字为name的服务，上面是将http重新reload</li>
 <li><code>service --status-all</code>，列出所有系统服务的当前状态</li>
-<li>command 命令如下表：<br>| 命令        | 命令描述   |<br>| ——–   | —–:  |<br>| start     | 启动指定的服务 |<br>| stop        |   通过感觉的方式停止指定服务   |<br>| restart        |    重新启动指定的服务    |<br>| reload    | 重新装载指定服务的配置文件 |<br>| status   | 显示指定服务的状态｜</li>
+<li>command 命令如下表：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><em>命令</em></th>
+<th><em>命令描述</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>start</td>
+<td>启动指定的服务</td>
+</tr>
+<tr>
+<td>stop</td>
+<td>通过感觉的方式停止指定服务</td>
+</tr>
+<tr>
+<td>restart</td>
+<td>重新启动指定的服务</td>
+</tr>
+<tr>
+<td>reload</td>
+<td>重新装载指定服务的配置文件</td>
+</tr>
+<tr>
+<td>status</td>
+<td>显示指定服务的状态｜</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<ul>
 <li><code>service --status-all</code>，列出所有</li>
 </ul>
 </blockquote>
@@ -119,11 +151,10 @@
 <li><code>kill -9 pid</code>，强制杀死指定进程，信心可以突然报表</li>
 <li><code>killall process name</code>，如：<code>killall httpd</code>，表示结束某个名字的所有进程，<strong>同样名字可以有多个进程</strong></li>
 </ul>
-<h3 id="4_ubuntu_mysql_utf8编码的设置：">4 ubuntu mysql utf8编码的设置：</h3><pre><code>到<span class="regexp">/etc/my</span>.cnf或者是<span class="regexp">/etc/my</span>sql<span class="regexp">/my.cnf里面修改client，mysqld,mysql字段，**网上很多人的路径是/</span>etc<span class="regexp">/my.cnf,我的是在/</span>etc<span class="regexp">/mysql/my</span>.cnf**，怎么修改百度去
-</code></pre><p>###5 service mysql start失败：<br><code>glinux@ubuntu:~$ sudo service mysql start</code><br><code>start: Job failed to start</code></p>
-<pre><code>问题出现的原因：我将<span class="escape">`/</span>etc/mysql/my.cnf<span class="escape">`里</span>面的[mysql]设置为<span class="escape">`d</span>efault-character-set=utf8<span class="escape">`了</span>，网络资料说：如果mysql版本<span class="number">5.5</span>后设置mysqld字段设置如下：
-</code></pre><blockquote>
-<p><code>character-set-server=utf8</code></p>
+<h3 id="4_ubuntu_mysql_utf8编码的设置：">4 ubuntu mysql utf8编码的设置：</h3><p>到/etc/my.cnf或者是/etc/mysql/my.cnf里面修改client，mysqld,mysql字段，<strong>网上很多人的路径是/etc/my.cnf,我的是在/etc/mysql/my.cnf</strong>，怎么修改百度去</p>
+<h3 id="5_service_mysql_start失败：">5 service mysql start失败：</h3><p><code>glinux@ubuntu:~$ sudo service mysql start</code><br><code>start: Job failed to start</code></p>
+<blockquote>
+<p>问题出现的原因：我将<code>/etc/mysql/my.cnf</code>里面的[mysql]设置为<code>default-character-set=utf8</code>了，网络资料说：如果mysql版本5.5后设置mysqld字段设置为：<code>character-set-server=utf8</code></p>
 </blockquote>
 ]]></content>
     <summary type="html">
@@ -137,16 +168,50 @@
 </li>
 </ul>
 <h3 id="2_services命令">2 services命令</h3><p><strong>命令:</strong><code>service name command：service httpd reload</code></p>
-<blockquote>
 <ul>
 <li>使用command方式控制名字为name的服务，上面是将http重新reload</li>
 <li><code>service --status-all</code>，列出所有系统服务的当前状态</li>
-<li>command 命令如下表：<br>| 命令        | 命令描述   |<br>| ——–   | —–:  |<br>| start     | 启动指定的服务 |<br>| stop        |   通过感觉的方式停止指定服务   |<br>| restart        |    重新启动指定的服务    |<br>| reload    | 重新装载指定服务的配置文件 |<br>| status   | 显示指定服务的状态｜</li>
+<li>command 命令如下表：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><em>命令</em></th>
+<th><em>命令描述</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>start</td>
+<td>启动指定的服务</td>
+</tr>
+<tr>
+<td>stop</td>
+<td>通过感觉的方式停止指定服务</td>
+</tr>
+<tr>
+<td>restart</td>
+<td>重新启动指定的服务</td>
+</tr>
+<tr>
+<td>reload</td>
+<td>重新装载指定服务的配置文件</td>
+</tr>
+<tr>
+<td>status</td>
+<td>显示指定服务的状态｜</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<ul>
 <li><code>service --status-all</code>，列出所有</li>
 </ul>
 </blockquote>]]>
     
     </summary>
+    
+      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
     
       <category term="技术" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF/"/>
     

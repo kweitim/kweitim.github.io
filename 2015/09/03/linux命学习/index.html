@@ -16,8 +16,7 @@ ps aux 显示系统所以进程
 
 2 services命令命令:service name command：service httpd reload
 
-
-使用command方式控制名字为name的服务，上面">
+使用command方式控制名字为name的服务，上面是">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux命令学习">
 <meta property="og:url" content="http://yoursite.com/2015/09/03/linux命学习/index.html">
@@ -33,9 +32,8 @@ ps aux 显示系统所以进程
 
 2 services命令命令:service name command：service httpd reload
 
-
-使用command方式控制名字为name的服务，上面">
-<meta property="og:updated_time" content="2015-09-07T12:46:53.837Z">
+使用command方式控制名字为name的服务，上面是">
+<meta property="og:updated_time" content="2015-09-22T09:07:14.136Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux命令学习">
 <meta name="twitter:description" content="1 查找pid
@@ -49,8 +47,7 @@ ps aux 显示系统所以进程
 
 2 services命令命令:service name command：service httpd reload
 
-
-使用command方式控制名字为name的服务，上面">
+使用command方式控制名字为name的服务，上面是">
   
     <link rel="alternative" href="/atom.xml" title="KweiTimBlog" type="application/atom+xml">
   
@@ -153,7 +150,7 @@ ps aux 显示系统所以进程
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/技术/" style="font-size: 20px;">技术</a> <a href="/tags/随想/" style="font-size: 20px;">随想</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
+						<a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/技术/" style="font-size: 20px;">技术</a> <a href="/tags/随想/" style="font-size: 20px;">随想</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
 					</div>
 				</section>
 				
@@ -261,7 +258,7 @@ ps aux 显示系统所以进程
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
 	</div>
 
         
@@ -282,11 +279,43 @@ ps aux 显示系统所以进程
 </li>
 </ul>
 <h3 id="2_services命令">2 services命令</h3><p><strong>命令:</strong><code>service name command：service httpd reload</code></p>
-<blockquote>
 <ul>
 <li>使用command方式控制名字为name的服务，上面是将http重新reload</li>
 <li><code>service --status-all</code>，列出所有系统服务的当前状态</li>
-<li>command 命令如下表：<br>| 命令        | 命令描述   |<br>| ——–   | —–:  |<br>| start     | 启动指定的服务 |<br>| stop        |   通过感觉的方式停止指定服务   |<br>| restart        |    重新启动指定的服务    |<br>| reload    | 重新装载指定服务的配置文件 |<br>| status   | 显示指定服务的状态｜</li>
+<li>command 命令如下表：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><em>命令</em></th>
+<th><em>命令描述</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>start</td>
+<td>启动指定的服务</td>
+</tr>
+<tr>
+<td>stop</td>
+<td>通过感觉的方式停止指定服务</td>
+</tr>
+<tr>
+<td>restart</td>
+<td>重新启动指定的服务</td>
+</tr>
+<tr>
+<td>reload</td>
+<td>重新装载指定服务的配置文件</td>
+</tr>
+<tr>
+<td>status</td>
+<td>显示指定服务的状态｜</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<ul>
 <li><code>service --status-all</code>，列出所有</li>
 </ul>
 </blockquote>
@@ -296,11 +325,10 @@ ps aux 显示系统所以进程
 <li><code>kill -9 pid</code>，强制杀死指定进程，信心可以突然报表</li>
 <li><code>killall process name</code>，如：<code>killall httpd</code>，表示结束某个名字的所有进程，<strong>同样名字可以有多个进程</strong></li>
 </ul>
-<h3 id="4_ubuntu_mysql_utf8编码的设置：">4 ubuntu mysql utf8编码的设置：</h3><pre><code>到<span class="regexp">/etc/my</span>.cnf或者是<span class="regexp">/etc/my</span>sql<span class="regexp">/my.cnf里面修改client，mysqld,mysql字段，**网上很多人的路径是/</span>etc<span class="regexp">/my.cnf,我的是在/</span>etc<span class="regexp">/mysql/my</span>.cnf**，怎么修改百度去
-</code></pre><p>###5 service mysql start失败：<br><code>glinux@ubuntu:~$ sudo service mysql start</code><br><code>start: Job failed to start</code></p>
-<pre><code>问题出现的原因：我将<span class="escape">`/</span>etc/mysql/my.cnf<span class="escape">`里</span>面的[mysql]设置为<span class="escape">`d</span>efault-character-set=utf8<span class="escape">`了</span>，网络资料说：如果mysql版本<span class="number">5.5</span>后设置mysqld字段设置如下：
-</code></pre><blockquote>
-<p><code>character-set-server=utf8</code></p>
+<h3 id="4_ubuntu_mysql_utf8编码的设置：">4 ubuntu mysql utf8编码的设置：</h3><p>到/etc/my.cnf或者是/etc/mysql/my.cnf里面修改client，mysqld,mysql字段，<strong>网上很多人的路径是/etc/my.cnf,我的是在/etc/mysql/my.cnf</strong>，怎么修改百度去</p>
+<h3 id="5_service_mysql_start失败：">5 service mysql start失败：</h3><p><code>glinux@ubuntu:~$ sudo service mysql start</code><br><code>start: Job failed to start</code></p>
+<blockquote>
+<p>问题出现的原因：我将<code>/etc/mysql/my.cnf</code>里面的[mysql]设置为<code>default-character-set=utf8</code>了，网络资料说：如果mysql版本5.5后设置mysqld字段设置为：<code>character-set-server=utf8</code></p>
 </blockquote>
 
       
