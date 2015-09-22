@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-09-07T12:46:53.837Z</updated>
+  <updated>2015-09-22T08:37:45.876Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -13,6 +13,81 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[C++积累]]></title>
+    <link href="http://yoursite.com/2015/09/22/C-%E7%A7%AF%E7%B4%AF/"/>
+    <id>http://yoursite.com/2015/09/22/C-积累/</id>
+    <published>2015-09-22T07:14:02.000Z</published>
+    <updated>2015-09-22T08:37:45.876Z</updated>
+    <content type="html"><![CDATA[<h2 id="1、类const_int，const_static_int，static_int，int数据成员：">1、类const int，const static int，static int，int数据成员：</h2><p><strong>const int</strong> </p>
+<blockquote>
+<p>数据成员变量不可以在类外定义，需要使用构造函数直接初始化而非赋值初始化，即只可以在类外部定义初始化<br>例如直接初始化：<code>aClass(int num)：initConstInt(num)</code></p>
+</blockquote>
+<p><strong>const static int</strong> </p>
+<blockquote>
+<p>数据成员变量可以在 <strong><em>类内、类外</em></strong> 定义初始化</p>
+</blockquote>
+<p><strong>static int</strong> </p>
+<blockquote>
+<p>数据成员变量只可以在 <strong><em>类外部</em></strong> 定义初始化</p>
+</blockquote>
+<p><strong>int</strong></p>
+<blockquote>
+<p>数据成员只能在<strong><em>类外</em></strong> 定义 </p>
+</blockquote>
+<h2 id="2、#宏">2、#宏</h2><blockquote>
+<ul>
+<li><strong>#ifdef _DEBUG</strong><br>如例子，在VS C++项目里面常使用到<code>#ifdef _DEBUG</code><a id="more"></a>告诉编译器：如果现在是debug调试状态，会编译<code>DEBUG_CONFIG_TEST(x,y)</code>;否则执行的是<code>RELEASE_CONFIG_TEST(x,y)</code>，这样一个直接的用处是：根据不同需求进行一些特殊处理，我们可以<code>DEBUG_CONFIG_TEST</code>,<code>RELEASE_CONFIG_TEST</code><br>写两份不同的代码，调试的时候使用debug的代码，发行版本使用的是release的代码</li>
+</ul>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#include "sth.h"</span><br><span class="line"></span><br><span class="line">#define DEBUG_CONFIG_TEST(x,y) const std::string x = "..\config\data\" y</span><br><span class="line">#define RELEASE_CONFIG_TEST(x,y) const std::strin y = "..\config\data\" y</span><br><span class="line"></span><br><span class="line">#ifdef _DEBUG</span><br><span class="line">CONFIG_FILE(x,y) DEBUG_CONFIG_TEST(x,y)</span><br><span class="line">#else</span><br><span class="line">CONFIG_FILE(x,y) RELEASE_CONFIG_TEST(x,y)</span><br><span class="line">#endif</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">    CONFIG_FILE(configFile,'file.json');</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li><strong>#define</strong><br>define可以定义多行，但是需要行尾加入’\’，要牢牢记住宏原理，详情参考<a href="http://www.educity.cn/develop/457702.html" target="_blank" rel="external">C/C++之define用法小结</a>,如代码例子</li>
+</ul>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">define</span> multiLine(x)&#123;\</span><br><span class="line">    aLine;\</span><br><span class="line">    aLine;\</span><br><span class="line">    <span class="comment">//otherLine</span></span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span>::function(params)&#123;</span><br><span class="line">    multiLine(x);<span class="comment">//使用多行的宏</span></span><br><span class="line">    something;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li><strong>使用define的一些好处？</strong><blockquote>
+<ul>
+<li>函数调用的开销</li>
+<li>类型无关，如果一个int，double，float比较大小，可能需要重写三个函数，宏只要一个。</li>
+<li>决解一些函数无法完成的任务,比如有些参数类型必能传递给函数（<strong>设计为单例的类</strong>）</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[C++基础，之前项目C++的一些总结]]>
+    
+    </summary>
+    
+      <category term="C++" scheme="http://yoursite.com/tags/C/"/>
+    
+      <category term="技术" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="随想" scheme="http://yoursite.com/tags/%E9%9A%8F%E6%83%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[0to8]]></title>
+    <link href="http://yoursite.com/2015/09/18/0to8/"/>
+    <id>http://yoursite.com/2015/09/18/0to8/</id>
+    <published>2015-09-18T13:17:55.000Z</published>
+    <updated>2015-09-22T07:08:50.784Z</updated>
+    <content type="html"></content>
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="随想" scheme="http://yoursite.com/tags/%E9%9A%8F%E6%83%B3/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[linux命令学习]]></title>
@@ -99,7 +174,7 @@
     <link href="http://yoursite.com/2015/08/29/sth4SchoolDay/"/>
     <id>http://yoursite.com/2015/08/29/sth4SchoolDay/</id>
     <published>2015-08-29T02:07:50.000Z</published>
-    <updated>2015-09-07T12:19:29.963Z</updated>
+    <updated>2015-09-07T12:19:34.955Z</updated>
     <content type="html"><![CDATA[<p> —  在最美的日子里，遇见了最好的你</p>
 <h2 id=""><img src="http://7xljai.com1.z0.glb.clouddn.com/term_begin.jpg" alt=""></h2><h3 id="起点">起点</h3><p>今天2015.8.29，2011.8.29是大学开学的第一天。我是27号提前了一天到学校，新生报到还不是很多。那天我是在中旅普蜂莲花下车的，但是一下车就被摩托车包围了，嗯，我确实被吓到了，以为来错地方了。忘记那时是坐什么车去学校了，可能来的时候车开得太快了脑子没跟上，但是应该是39路。在天河东路这边经常看到一辆39路，那天跟老大过红绿灯时见到就说：39路是回到我学校的，他疑惑看一下我，所以自己又解析了一番。</p>
 <h2 id="<!-more->"><a id="more"></a></h2><p>到了学校，我还不知道自己的宿舍在哪，同乡师兄带我到AB那边再查，结果查到我是至诚的。又搬着行李往回走，但是这次是从科报厅那条过去的，第一次走那条路感觉好像走了很久很久才到至诚。到了宿舍我再次被吓到了，我竟然跟大我一届师兄住而且还不同专业，那时宿舍还有另外一个人ds，一直没叫他师兄因为我被骗了很久，一开始他跟jx合伙说他是新生，我想都没想就信了。我也忘记被骗了多久才知道，反正后面三年叫ds名字基本没加上师兄两个字。当天下午，我就跟一个师兄去买好一些生活用品了。那天晚上，两个师兄去值班接新生了，所以留下我跟一个新生的爸爸在宿舍聊天，只记得大叔是弄房地产的，然后其他都忘记了。一觉睡到第二天8点，起床后屁颠屁颠的跟着师兄去迎接新生了。后面我才得知至诚是一个书院来的，小区管理模式、男女混住，见识算是一次次被刷新了。</p>
